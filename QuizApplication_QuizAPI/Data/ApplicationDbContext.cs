@@ -212,11 +212,19 @@ namespace QuizApplication_QuizAPI.Data
 				});
 
 			modelBuilder.Entity<UserAnswer>().HasData(
+				//new UserAnswer { UserAnswerId = 1, AttemptId = 2, QuestionId = 1, SelectedOptionId = 1, IsCorrect = true },   // HTML correct
+				//new UserAnswer { UserAnswerId = 2, AttemptId = 2, QuestionId = 2, SelectedOptionId = 5, IsCorrect = false },  // Selected HTML instead of JS
+
 				new UserAnswer { UserAnswerId = 3, AttemptId = 1, QuestionId = 1, SelectedOptionId = 1, IsCorrect = true },   // HTML correct
 				new UserAnswer { UserAnswerId = 4, AttemptId = 1, QuestionId = 2, SelectedOptionId = 7, IsCorrect = true },   // JavaScript correct
 				new UserAnswer { UserAnswerId = 5, AttemptId = 1, QuestionId = 3, SelectedOptionId = 10, IsCorrect = true },  // Math correct
 				new UserAnswer { UserAnswerId = 6, AttemptId = 1, QuestionId = 4, SelectedOptionId = 13, IsCorrect = true },  // Comments correct
-				new UserAnswer { UserAnswerId = 7, AttemptId = 1, QuestionId = 5, SelectedOptionId = 17, IsCorrect = false }); // CSS wrong
+				new UserAnswer { UserAnswerId = 7, AttemptId = 1, QuestionId = 5, SelectedOptionId = 17, IsCorrect = false }, // CSS wrong
+
+				new UserAnswer { UserAnswerId = 8, AttemptId = 3, QuestionId = 6, SelectedOptionId = 21, IsCorrect = true },  // Abstract class correct
+                new UserAnswer { UserAnswerId = 9, AttemptId = 3, QuestionId = 7, SelectedOptionId = 26, IsCorrect = false }, // Selected static instead of sealed
+                new UserAnswer { UserAnswerId = 10, AttemptId = 3, QuestionId = 8, SelectedOptionId = 29, IsCorrect = true },  // DI correct
+                new UserAnswer { UserAnswerId = 11, AttemptId = 3, QuestionId = 9, SelectedOptionId = 33, IsCorrect = false });  // Selected List instead of ConcurrentDictionary
 		}
 	}
 }
